@@ -1,0 +1,83 @@
+1	Acidic Slime
+1	Alchemist's Refuge
+1	Avenger of Zendikar
+1	Bane of Progress
+1	Beast Within
+1	Birthing Pod
+1	Blatant Thievery
+1	Body Double
+1	Brainstorm
+1	Breeding Pool
+1	Bribery
+1	Brutalizer Exarch
+1	Clever Impersonator
+1	Cloudstone Curio
+1	Coiling Oracle
+1	Command Tower
+1	Consecrated Sphinx
+1	Courser of Kruphix
+1	Crystal Shard
+1	Cultivate
+1	Cyclonic Rift
+1	Deceiver Exarch
+1	Edric, Spymaster of Trest
+1	Eternal Witness
+1	Etherium-Horn Sorcerer
+1	Exploration
+1	Fact or Fiction
+1	Farseek
+1	Fertilid
+9	Forest
+1	Frost Titan
+1	Glen Elendra Archmage
+1	Gruul Signet
+1	Gruul Turf
+1	Halimar Depths
+1	Hinterland Harbor
+1	Inferno Titan
+1	Intet, the Dreamer
+6	Island
+1	Izzet Boilerworks
+1	Izzet Signet
+1	Karplusan Forest
+1	Kessig Wolf Run
+1	Kiki-Jiki, Mirror Breaker
+1	Kira, Great Glass-Spinner
+1	Knowledge Exploitation
+1	Kodama's Reach
+1	Krosan Grip
+1	Mana Vault
+1	Mind's Dilation
+4	Mountain
+1	Mulldrifter
+1	Nature's Lore
+1	Oracle of Mul Daya
+1	Phyrexian Metamorph
+1	Ponder
+1	Prime Speaker Zegana
+1	Rashmi, Eternities Crafter
+1	Reclamation Sage
+1	Reflecting Pool
+1	Reliquary Tower
+1	Rhystic Study
+1	Riku of Two Reflections
+1	Rite of Replication
+1	Rootbound Crag
+1	Sakura-Tribe Elder
+1	Shardless Agent
+1	Shivan Reef
+1	Simic Growth Chamber
+1	Simic Signet
+1	Skyshroud Claim
+1	Sol Ring
+1	Solemn Simulacrum
+1	Steam Vents
+1	Stomping Ground
+1	Sulfur Falls
+1	Sylvan Library
+1	Temple of the False God
+1	Volition Reins
+1	Woodfall Primus
+1	Yavimaya Coast
+1	Yavimaya Elder
+1	Zealous Conscripts
