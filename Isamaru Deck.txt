@@ -50,6 +50,7 @@
 1	[[Rebuff the wicked]]
 1	[[Return to dust]]
 1	[[Shining Shoal]]
+1 [[sigarda's Aid]]
 1	[[Solemn Simulacrum]]
 1	[[Steelshaper's Gift]]
 1	[[Stoneforge Mystic]]
