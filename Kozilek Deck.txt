@@ -93,5 +93,4 @@
 1	Wasteland
 5	Wastes
 1	Winding Canyons
-1	Worn Powerstone
 1 Emrakul, Promised End
