@@ -1,0 +1,21 @@
+Dot operator works like writing an address
+It allows you to drill down, seperate and access compound items in unity.
+
+semicolon is at the end because it ends the statement
+
+anything using a brace, does not need a semicolon
+
+indenting is not needed but helps clear things
+
+Syntax
+affects how the code runs
+Will error if the code is incorrect
+
+
+Conventions 
+How the code is written
+  *Whtie Space/Indents
+  *Formattting
+Does not affect how the program runs
+Comments can be used to make a comment about a piece of code, these are indicated by a double forward slash
+You can write a forward slash and an asterisk to write a multi line comment start with a forward slash, then asterisk. Each new line will have an asterisk, then you close the multi line with an asterisk and forward slash.
