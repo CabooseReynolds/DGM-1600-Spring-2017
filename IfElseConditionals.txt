@@ -1,0 +1,16 @@
+If and Else Statements
+
+Codes that are based on conditions
+
+for example, if coffee is too hot, you wont drink it
+
+If the coffee is not to hot, then we drink it. 
+
+Else statement would allow that if it was left out and got too cold, we wouldn't drink it either.
+
+You can create an if statement for Coffee Tempurature is greater than the (Hot Limit) and have the Debug.log as "Coffee is too hot" and its "Dont Drink"
+
+else, if you ahve hit the Cold limit you can create a Debug.log for "Coffee is too cold"
+
+Else, if it doesn't meet either of those conditions, you can drink it. 
+
