@@ -1,0 +1,66 @@
+Loops in programming are ways of repeating lines of code
+
+While Loop
+
+public class WhileLoop : MonoBehaviour
+{
+	 Int cupsInTheSink = 4;
+
+	void Start ()
+	{
+		while(cupsinthesink > 0)
+		{
+			Debug.Log ("i've washed a cup!");
+			cupsInTheSink--;
+		}
+	}
+}
+
+The loop will repeat as long as the cups in sink is greater that 0
+
+Dowhile Loop
+
+Hardly use a dowhile loop
+
+public class DoWhileLoop : MonoBehaviour
+{
+	Void Start ()
+	{
+		bool shouldContinue = false;
+
+	do
+	{
+		print ("Hello World");
+
+		while(shouldContinue == true);
+	}
+}
+
+
+ForLoop
+
+public class ForLoop : MonoBehaviour
+{
+	int numEnemies = 3;
+
+	void Start ()
+	{
+
+		for(int i = 0; i < numEnemies; i++)
+		{
+			Debug.Log("Creating enemy number: " + i);
+		}
+	}
+}
+
+ForeachLoop (inventory)
+public class ForeachLoop : MonoBehaviour
+{
+	void Start ()
+	{
+		string[] strings = new string[3];
+
+		strings[0] = "First string";
+		strings[1] = "Second string";
+		strings[2] = "Third string";
+
