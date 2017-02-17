@@ -7,7 +7,10 @@ public class PoridgeCode : MonoBehaviour
     float hotLimitTemperature = 90.0f;
     float coldLimitTemperature = 60.0f;
     
-
+/* In this code, Goldilocks will be trying to eat PapaBears Poridge. We seehere that the temperature is set t 100.0f. 
+Which is over the hot limit. So during this code it will see that the temperature is too hot for goldilocks and return a 
+print of "Poridge is too hot. If the Poridge sad at below 60.0f it would return as too cold. but if the temperature sits
+between 60.1f and 89.9f the code should read as "Pordige is just right. Goldilocks can then eat the poridge. */
     void Update ()
     {
         if(Input.GetKeyDown(KeyCode.Space))
