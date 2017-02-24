@@ -1,0 +1,7 @@
+arrays are a way of storing a collection of data of the same type together
+
+you can store multiple integers together 
+
+after the int use the square brackets ie: int[] myIntArray = new int [5];
+
+you can 
