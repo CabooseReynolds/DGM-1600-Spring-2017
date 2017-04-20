@@ -13,6 +13,8 @@ public class Calculator : MonoBehaviour {
 	public float num1 = 0;
 	public float num2 = 0;
 
+	public static float total;
+
 	private string lastFunction = "Start";
 	//public bool firstNumber;
 	public bool opperatorPressed = false;
@@ -150,12 +152,28 @@ public class Calculator : MonoBehaviour {
 			case "Multiply":
 				sum = num1 * num2;
 				num1 = sum;
+				if(num2 == 0
+				{
+					total = 0;
+				}
+				else
+				{
+					total = sum;
+				}
 				num2 = 0;
 				UpdateText();
-				break;
+				break;)
 			case "Divide":
 				sum = num1 / num2;
 				num1 = sum;
+				if(num2 == 0)
+				{
+					total = 0;
+				}
+				else
+				{
+					total = sum;
+				}
 				num2 = 0;
 				UpdateText();
 				break;
@@ -198,10 +216,12 @@ public class Calculator : MonoBehaviour {
 			case "Multiply":
 				num1 = num1 * num2;
 				num2 = 0;
+				//lastFunction = "Multiply";
 				break;
 			case "Divide":
 				num1 = num1 / num2;
 				num2 = 0;
+				//lastFunction = "Divide";
 				break;
 			case "Start":
 				num1 = num2;
