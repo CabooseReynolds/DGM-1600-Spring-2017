@@ -16,7 +16,8 @@ public class Spawner : MonoBehaviour {
 
 void Start () 
 {
-    StartCoroutine("waitSpawner");
+    StartCoroutine(waitSpawner());
+            Destroy(gameObject, .5);
 }
 
 
