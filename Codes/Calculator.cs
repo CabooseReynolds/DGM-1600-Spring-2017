@@ -16,8 +16,12 @@ public class Calculator : MonoBehaviour {
 	public static float total;
 
 	private string lastFunction = "Start";
-	//public bool firstNumber;
-	public bool opperatorPressed = false;
+
+	//Enabled or disabled depending on criteria of the game
+	public Button multiplyButton;
+	public Button divideButton;
+	public Button digitOneButton;
+	public Button equalsButton;
 
 	// Use this for initialization
 	void Start () {
@@ -31,6 +35,7 @@ public class Calculator : MonoBehaviour {
 
 	public void AddDigit(float digit)
 	{
+/*	{
 
 		if(opperatorPressed)
 		{
@@ -47,45 +52,48 @@ public class Calculator : MonoBehaviour {
 		}
 
 		UpdateText();
-	}
+	} 
+	
+	The above has been removed in order to apply new controls to the calculator to give it more functionality during game rather than being a simple 10 digit calculator */
+	digitOneButton.interactable = true;
 
+	//stacks digits so you can create larger numbers rather than being individual digits in an equation
+	num2 = (num2 * 10) + digit;
+	sum = num2;
+//more checks for what buttons should be enabled/disabled in the game so that the game isn't easy
+		if((digit == 1 && sum < 10) || sum % 10 == 0)
+		{
+			multiplyButton.interactable = false;
+			divideButton.interactable = false;
+		}
+		else
+		{
+			multiplyButton.interactable = true;
+			divideButton.interactable = true;
+		}
+		if((digit == 1 || sum % 10 == 0) && (lastFunction == "Multiply" || lastFunction == "Divide"))
+		{
+			equalsButton.interactable = false;
+		}
+		else
+		{
+			equalsButton.interactable = true;
+		}
+		UpdateText();
+}
 	public void AddButton ()
 	{
+	//sets the output text to say + so we know that we pressed the + button
 		outputText.text = "+";
-        // if(lastFunction != "Equals")
-		// {
-		// 	if(firstNumber)
-		// 	{
-		// 		num1 = num2;
-		// 		firstNumber = false;
-		// 	}
-		// 	else
-		// 	{
-		// 		num1 = num1 + num2;
-		// 	}
-		// }
-		// num2 = 0;
 		Function();
 		lastFunction = "Add";
 		Debug.Log(lastFunction);
 	}
 
 	public void SubtractButton ()
+	//same as Addbutton but with Subtraction
 	{
 		outputText.text = "-";
-    // if(lastFunction != "Equals")
-		// {
-		// 	if(firstNumber)
-		// 	{
-		// 		num1 = num2;
-		// 		firstNumber = false;
-		// 	}
-		// 	else
-		// 	{
-		// 		num1 = num1 - num2;
-		// 	}
-		// }
-		// num2 = 0;
 		Function();
 		lastFunction = "Subtract";
 		Debug.Log(lastFunction);
@@ -93,20 +101,8 @@ public class Calculator : MonoBehaviour {
 
 	public void MultiplyButton ()
 	{
+	//same as Addbutton but with Multiplication
 		outputText.text = "*";
-		// if(lastFunction != "Equals")
-		// {
-		// 	if(firstNumber)
-		// 	{
-		// 		num1 = num2;
-		// 		firstNumber = false;
-		// 	}
-		// 	else
-		// 	{
-		// 		num1 = num1 * num2;
-		// 	}
-		// }
-		// num2 = 0;
 		Function();
 		lastFunction = "Multiply";
 		Debug.Log(lastFunction);
@@ -114,28 +110,29 @@ public class Calculator : MonoBehaviour {
 
 	public void DivideButton ()
 	{
+	//same as Addbutton but with Division
 		outputText.text = "/";
-		// if(lastFunction != "Equals")
-		// {
-		// 	if(firstNumber)
-		// 	{
-		// 		num1 = num2;
-		// 		firstNumber = false;
-		// 	}
-		// 	else
-		// 	{
-		// 		num1 = num1 / num2;
-		// 	}
-		// }
-		// num2 = 0;
 		Function();
 		lastFunction = "Divide";
 		Debug.Log(lastFunction);
+		digitOnebutton.interactable = false;
 	}
 
 	public void EqualButton ()
 	{
-		switch (lastFunction)
+		//changed function of the equalbutton from a switch to last function.
+		Function(); 
+		sum = num1;
+
+		if(lastFunction != "Start")
+		{
+			total = sum;
+		}
+		lastFunction = "Start";
+
+		UpdateText();
+	}
+		/* switch (lastFunction)
 		{
 			case "Add":
 				sum = num1 + num2;
@@ -183,7 +180,7 @@ public class Calculator : MonoBehaviour {
 		}
 		opperatorPressed = true;
 		lastFunction = "Equals";
-	}
+	} */
 
 	public void ClearButton ()
 	{
@@ -197,10 +194,6 @@ public class Calculator : MonoBehaviour {
 
 	public void Function ()
 	{
-		if(opperatorPressed)
-		{
-			opperatorPressed = false;
-		}
 		switch (lastFunction)
 		{
 			case "Add":
@@ -226,8 +219,6 @@ public class Calculator : MonoBehaviour {
 			case "Start":
 				num1 = num2;
 				num2 = 0;
-				break;
-			case "Equals":
 				break;
 			default:
 				Debug.Log("No lastFunction set");
