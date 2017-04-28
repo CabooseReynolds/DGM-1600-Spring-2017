@@ -6,23 +6,26 @@ public class NumberController : MonoBehaviour {
 
 	public ParticleSystem numbers;
 
-	//value for this number, set externally
+	//Point value for this number, set externally
 	public float numberValue;
 
-	//how many points this number is worth, set externally
-	public int scoreValue = 5;
+	//Set externally, this is the value of the number for your score
+	public int scoreValue = 10;
 	public int scoreLoseValue;
 	public bool useTimer;
 
 	// Use this for initialization
 	void Start () {
-		
+	if(GameController.gameOver)
+				{
+					Destroy(gameObject);
+				}
 	}
 	
 	// Update is called once per frame
-	void Update () {
-
-		//slowly moves number down over time
+    void Update()
+    {
+        // how fast he numbers fall
 		transform.Translate(Vector3.up * -.5f * Time.deltaTime);
 	}
 
@@ -37,9 +40,6 @@ public class NumberController : MonoBehaviour {
 					SpawnParticle();
 					Destroy(gameObject);
 				}
-				// if collider's number and this number are the same then calculator answer was correct and you get points and the number gets destroyed
-				// yay you!
-				//add collider check tag to test if colliding with floor or number check
 				float collNumber = other.gameObject.GetComponent<CheckerController>().number;
 				Debug.Log("colliderNumber = " + collNumber);
 				if(numberValue == collNumber)
