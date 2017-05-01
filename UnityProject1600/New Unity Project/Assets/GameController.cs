@@ -14,20 +14,22 @@ public class GameController : MonoBehaviour
     float timerTime;
     //Checks incerments of time in intervals of 5 for use of Numbers spawn
     public float timerCheckTime = 5;
-    public static float score;
+    public static float score = 0;
     //Array set up for number spawn at random
     public NumberController[] numbers;
     public Transform numberSpawn;
     public CheckerController checker;
     public Transform checkerSpawn;
     public Text scoreText;
+    public Text scoreText2;
     public Image gameOverScreen;
     private bool spawned = false;
     public Text gameOverText;
     public static bool gameOver = false;
+    private bool restart;
 //    public float spawnTime = 5f;        // The amount of time between each spawn.
 //    public float spawnDelay = 3f;       // The amount of time before spawning starts.  
-// The following commented codes are to get the game to randomly spawn enemies rather than on a timer.
+// The following commented codes are to get the game to randomly spawn between two set numbers.
 	public float spawnWait;
 	public float spawnMostWait;
 	public float spawnLeastWait;
@@ -38,6 +40,9 @@ public class GameController : MonoBehaviour
     {
         timerTime = timerStartTime;
         Invoke("SpawnNumber", 1);
+        //allows game to restart timer and score. Waits for the code to be activated in order to trigger game over or the restart feature.
+        gameOver = false;
+        restart = false;
 //		StartCoroutine(SpawnNumber());
     }
 
@@ -48,6 +53,10 @@ public class GameController : MonoBehaviour
         {
             //GameOver();
         }
+         if (restart) 
+         {
+                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+             }
         else
         {
             Timer();
@@ -56,7 +65,18 @@ public class GameController : MonoBehaviour
 /*		{
         spawnWait = Random.Range(spawnLeastWait, spawnMostWait);
     } */
+
+    //following resets score on game screen.
     }
+    public static void ResetPoints()
+{
+    score = 0;
+}
+void Awake()
+{
+    score = 0; //Also the score here
+    GameController.ResetPoints(); 
+}
 
     void SpawnNumber()
     {
@@ -75,7 +95,7 @@ public class GameController : MonoBehaviour
         NumberController newDigit;
 	// spawns between 2 points of my number spawner bar.
         float xSpawn = Random.Range(.5f, 8.5f);
-          if (!gameOver)
+         // if (!gameOver)
 
       {Invoke("SpawnNumber", spawnWait = Random.Range(spawnLeastWait, spawnMostWait));}
 
@@ -96,12 +116,15 @@ public class GameController : MonoBehaviour
         //Checker should only spawn when you hit the equal
         CheckerController newChecker = Instantiate(checker, checkerSpawn.position, checkerSpawn.rotation) as CheckerController;
         newChecker.number = Calculator.total;
-    }
-
+ }
+ //Following is to restart the scene, but it doesn't work with the current game coding setup.
+  /*    public void reloadCurrentScene() {
+     Scene loadedLevel = SceneManager.GetActiveScene ();
+     SceneManager.LoadScene (loadedLevel.buildIndex);
+         Time.timeScale = 1;
+     } */
     void Timer()
     {
-
-
         //decreases time on the timer
         timerTime -= Time.deltaTime;
         // displays the current time rounded down
@@ -114,10 +137,6 @@ public class GameController : MonoBehaviour
             gameOver = true;
             spawned = true;
             GameOver();
-        }
-        else if (timerTime <= 1)
-        {
-            timerTime = 60;
         }
 
         if (Mathf.Floor(timerTime % timerCheckTime) == 0 && spawned == false)
@@ -167,7 +186,9 @@ public class GameController : MonoBehaviour
     public void UpdateScore()
     {
         scoreText.text = "Score: " + score.ToString();
+        scoreText2.text = "Final Score: " + score.ToString();
     }
+    
 
     public void GameOver()
     {
@@ -175,13 +196,13 @@ public class GameController : MonoBehaviour
         scoreText.gameObject.SetActive(false);
         //gameOverText.gameObject.SetActive(true);
         gameOverScreen.gameObject.SetActive(true);
-        CheckNumber();
+        scoreText2.gameObject.SetActive(true);
+        CheckNumber(); 
     }
 
     public void ChangeScene(string sceneName)
     {
         gameOver = false;
-        spawned = false;
-        SceneManager.LoadScene(sceneName);
+        spawned = true;
     }
 }
